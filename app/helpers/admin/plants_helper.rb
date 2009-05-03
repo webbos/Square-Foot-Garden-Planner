@@ -1,0 +1,2 @@
+module Admin::PlantsHelper
+end

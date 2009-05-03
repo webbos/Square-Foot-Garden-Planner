@@ -1,0 +1,2 @@
+module Admin::HerbsHelper
+end

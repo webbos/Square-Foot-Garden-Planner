@@ -11,5 +11,8 @@ class User < SquareFootPlanner
       self.last_name +  ', ' + self.first_name
     end
 
+    def name
+      self.sort_name
+    end
   
 end
