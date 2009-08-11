@@ -1,23 +1,404 @@
-@import blueprint.sass
-@import blueprint/modules/scaffolding.sass
-@import compass/reset.sass
+html
+  body
+    :color                        black
+    :font                         
+      :family                     Veranda,Arial,sans-serif
+      :size                       10px
+    :padding
+      :top                        5px
+                                                                  
+    #doc                         
+      :width                      960px
+      :border                     
+        :left                     1px solid #e9e6d1
+        :right                    1px solid #e9e6d1
+        :bottom                   1px solid #e9e6d1
+      :background                 
+        :image                    url(../images/jstor-logo.gif)
+        :repeat                   no-repeat
+        :position                 0px 0px
+        
+      / Some common classes before we start up the actual specifics
+      .left
+        :text
+          :align                  left
 
-+blueprint
-// Remove the scaffolding when you're ready to start doing visual design.
-// Or leave it in if you're happy with how blueprint looks out-of-the-box
-+blueprint-scaffolding
+      .right
+        :text
+          :align                  right
 
-#container
-  +container
-    
-  #header
-    +column(23)
-    :border 1px solid green
-    
-  #main
-    +column(17)
-    +last
-    
-  #sidebar
-    +column(6)
-    :border 1px solid gray
+      .center
+        :text
+          :align                  center
+          
+      .draggable, .clickable, .new_recipe
+        :padding
+          :left                   18px
+        :background
+          :repeat                 no-repeat
+        :height                   15px
+          
+          
+      .draggable
+        :cursor                   move
+        :background
+          :image                  url(../images/icons/add.png)
+                                      
+      .clickable
+        :background
+          :image                  url(../images/icons/zoom.png)
+        
+      .new_recipe
+        :background
+          :image                  url(../images/icons/package_add.png)
+        a
+          :color                    #ffffff
+          :font
+            :size                   1.3em
+          :padding
+            :left                   4px
+          :text
+            :decoration             none
+          
+                                                                    
+      #hd                         
+        :background               
+          :color                  #fff
+        :position                 relative
+        :margin                   
+          :left                   65px
+        :padding                  none
+        :height                   79px
+        :width                    894px
+        :border                   
+          :left                   1px solid #e9e6d1
+          :right                  1px solid #e9e6d1
+          :top                    1px solid #e9e6d1
+                                  
+        h1                        
+          :padding                
+            :left                 10px
+            :top                  15px
+          :font                   
+            :family               times
+            :style                italic
+            :size                 2em
+            
+        .actions
+          ul
+            :position             relative
+            :top                  -30px
+            :width                98%
+            :margin
+              :right              15px
+            :text
+              :align              right
+
+            li
+            a
+              :font
+                :size           1em
+              :padding
+                :left           8px
+              :background
+                :color          transparent
+                :repeat         no-repeat
+                :attachment     scroll
+                :position       2px 5px
+                
+            / a
+            /   :color              #71672d
+            /   :font
+            /     :size             1em
+            / 
+            / a:hover, a:focus, a:active
+            /   :color              #9c8400
+                              
+        .menu
+          a
+            :color                rgb(156, 132, 0)
+            :font-family          Verdana
+            :text-decoration      none
+          ul
+            :display              inline-block
+            :width                100%
+            :height               21px
+            :position             absolute
+            :top                  58px
+            :left                 0px
+            :background           
+              :color              #dcd9b5
+       
+            
+            li
+              :font               
+                :family           times
+                :size             1.5em
+              :display            inline-block
+              :border
+                :right            3px solid #f4f2e7
+              :padding
+                :top              2px
+                :left             10px
+                :right            12px
+              :text
+                :transform        uppercase
+              
+            li:hover
+              :background
+                :color            #cac695
+              :cursor             pointer
+        
+      #bd
+        :margin
+          :top                    5px
+        :background
+          :color                  #fff
+                  
+        #yui-main 
+          :background
+            :color                  #fff
+        
+                    
+          .yui-b  
+            
+            .yui-g
+              :padding
+                :right                10px
+                :left                 10px
+                
+              h1
+                :margin
+                  :top              10px
+                :color              #555555
+                :font               
+                  :family           times
+                  :size             2.5em
+                  :weight           bold                
+                
+              .active-scaffold-header
+                h2
+                  :font               
+                    :family           times
+                    :size             2.5em
+                    :weight           normal
+                div.actions 
+                  a  
+                    :color            #3c3d46
+                
+              .active-scaffold
+                .view
+                  :background
+                    :color            #ffffff
+                  :border
+                    :left             1px solid #b7b387
+                    :top              1px solid #b7b387
+                    :right            1px solid #e5e3cb
+                    :bottom           1px solid #e5e3cb
+                
+                a:hover
+                  :background
+                    :color            transparent
+              
+                tr
+                  th
+                    :background
+                      :image          url(../images/blue-repeater.gif)
+                      :position       bottom left
+                      :color          none
+                    a
+                      :background
+                        :color        transparent
+                  td
+                    :border
+                      :color          #e9e6d1
+                  
+                  .actions
+                    td
+                      a
+                        :color          #9cadb9
+                      a:hover
+                        :color          #dcd9b5
+                        
+                .record td
+                  :background
+                    :color          #ffffff
+                .even-record td
+                  :background
+                    :color          lightgreen
+
+                    
+        #content
+            
+
+
+          #recipe_scaffold
+
+          #action_container
+            #action_add
+              :float                      left
+              :width                      190px
+              :margin
+                :top                      40px
+          
+            #action_scaffold
+              :float                      left
+              :width                      500px
+              / :float                      left
+            
+          #ingredients_scaffold
+            :padding
+              :top                        30px
+            :clear                        both
+            / h2
+            /   :color                    #ffffff
+            /   :font                     
+            /     :family                 times
+            /     :size                   2em
+            /     :weight                 700
+            /   :padding                  5px
+            /   :background               
+            /     :image                  url(/images/rightBarOverlay.jpg)
+            /     :position               bottom left
+                
+            .even-record
+              :background
+                :color                  lightblue
+                
+        #sidebar
+          :background
+            :color                    #fff
+          :border                     
+            :left                     1px solid #b7b387
+            :top                      1px solid #b7b387
+            :right                    1px solid #e5e3cb
+            :bottom                   1px solid #e5e3cb
+          :position                   relative
+          :margin
+            :top                        10px
+            :left                       10px
+          :height                     100%
+          :min-height                 500px
+        
+          a
+            :background-color         transparent
+            :color                    rgb(0, 102, 204)
+            :cursor                   auto
+            :text
+              :decoration             none
+          
+          h1                          
+            :color                    #ffffff
+            :font                     
+              :family                 times
+              :size                   200%
+              :weight                 700
+            :padding                  5px
+            :background               
+              :image                  url(../images/rightBarOverlay.jpg)
+              :position               bottom left
+                                      
+          .content                    
+            :padding                  10px
+            :margin                   0 0 0 0
+            :margin
+              :bottom                 28px
+            :padding
+              :bottom                 20px
+            / :max-height               800px
+            :overflow-y               auto
+            :border                   none
+            :font
+              :size                     1.25em
+            
+            h2                          
+              :color                    #ffffff
+              :font                     
+                :family                 times
+                :size                   200%
+                :weight                 700
+              :padding                  5px
+              :background               
+                :image                  url(../images/rightBarOverlay.jpg)
+                :position               bottom left
+                
+            #recipe_tree
+              :color                    #666
+              :font
+                :size                   1.2em              
+                
+              .tree_item
+                :border
+                  :bottom               1px dotted #666
+                :position               relative
+                :padding
+                  :bottom               5px
+                  :top                  5px
+                  :left                 4px
+                
+                a
+                  :color                #666
+                  :text
+                    :decoration         none
+                    
+                .details
+                  a
+                    :background
+                      :image            url(../images/icons/folder_go.png)
+                      :repeat           no-repeat
+                    :position           absolute
+                    :top                5px
+                    :left               180px
+                    :height             18px
+                    :width              18px
+
+                    
+              
+                / ol
+                /   :margin
+                /     :left               10px
+                /   :border
+                /     :left               1px solid #888
+                /   li
+                /     :list-style
+                /       :type             decimal
+                /       :position         inside
+                /     :padding
+                /       :left             5px
+                                      
+          .actions                    
+            :display                  block
+            :position                 absolute
+            :top                      100%
+            :left                     0px
+            :width                    204px
+            :margin                   
+              :top                    -29px
+            :padding                  8px
+            :background
+              :image                  url(../images/blue-repeater.gif)
+              :position               bottom left
+              :color                  none
+        
+        .toggle_on
+          :background                 url(../images/icons/tick.png) no-repeat center
+          :padding                    8px 10px
+                                      
+        .toggle_off                   
+          :background                 url(../images/icons/cross.png) no-repeat center
+          :padding                    8px 10px
+              
+      #ft                     
+        :background           
+          :color                  #fff
+                                  
+        :padding                  
+          :top                    10px
+          :right                  10px
+          :bottom                 91px
+          :left                   10px
+                              
+        p                     
+          :color                  #3c3d46
+          :font               
+            :size                 1em

@@ -1,0 +1,6 @@
+<%= link_to_remote(
+	( object.send("is_#{field}?") ? "<span class='toggle_on'>&nbsp;</span>" : "<span class='toggle_off'>&nbsp;</span>" ),
+	:url => { :controller => object.class.to_s.pluralize.downcase, 
+	          :action => "toggle_confirmation", 
+	          :field => field, :id => object, :klass => object.class },
+	:update => "record_#{object}_#{field}" ) -%>

@@ -1,0 +1,6 @@
+-# If there is no content, render a generic title.  Otherwise, render the title set by the controller
+%h1= ( @sidebar_title.nil? ? 'Square Foot Planner' : @sidebar_title ) 
+.content
+  = ( @content_partial.nil? ? render(:partial => '/shared/default_sidebar_content') : render(:partial => @content_partial) )
+.actions
+  = ( @actions_partial.nil? ? render(:partial => '/shared/default_sidebar_actions') : render(:partial => @actions_partial) )

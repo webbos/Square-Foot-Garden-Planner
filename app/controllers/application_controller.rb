@@ -3,6 +3,16 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
   
+  before_filter :generate_sidebar
+  
+  def toggle_confirmation
+    # Nothing to do here - this is a stub method to be overridden
+  end
+
+  def generate_sidebar
+    # Nothing to do here.
+  end
+  
   private
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
